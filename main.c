@@ -298,5 +298,34 @@ int		main(int argc, char **argv)
 	printf("Test with , dst[11], take 3 : %s\n", ft_strlcat(t27, "456789", 3));*/
 	char t29a[5] = "foo";
 	printf("     with , dst[11], take 3 : %zu\n", strlcat(t29a, "bar", sizeof(t29a)));
+	printf("\n");
+
+	// MEMCHR
+	printf("--- Test memchr ---\n");
+	printf("Test with Coucou, 6 : %s\n", ft_memchr("Coucou", 'o', 6));
+	printf("     with Coucou, 6 : %s\n", memchr("Coucou", 'o', 6));
+	printf("\n");
+
+	// MEMCMP
+	printf("--- Test memcmp ---\n");
+	printf("Test with Coucou, Coucou, 6 : %i\n", ft_memcmp("Coucou", "Coucou", 6));
+	printf("     with Coucou, Coucou, 6 : %i\n", memcmp("Coucou", "Coucou", 6));
+	printf("Test with Salut, Salty, 2 : %i\n", ft_memcmp("Salut", "Salty", 2));
+	printf("     with Salut, Salty, 2 : %i\n", memcmp("Salut", "Salty", 2));
+	printf("Test with Salut, Salty, 4 : %i\n", ft_memcmp("Salut", "Salty", 4));
+	printf("     with Salut, Salty, 4 : %i\n", memcmp("Salut", "Salty", 4));
+	printf("\n");
+
+	// MEMMOVE
+	printf("--- Test memmove ---\n");
+	char t30[60];
+	printf("Test with Coucou, Coucou, 6 : %s\n", (char *)ft_memmove(t30, "Coucou", 6));
+	char t30a[60];
+	printf("     with Coucou, Coucou, 6 : %s\n", (char *)memmove(t30a, "Coucou", 6));
+	char t31[60];
+	printf("Test with Coucou, Coucou, 3 : %s\n", (char *)ft_memmove(t31, "Coucou", 3));
+	char t31a[60];
+	printf("     with Coucou, Coucou, 3 : %s\n", (char *)memmove(t31a, "Coucou", 3));
+	printf("\n");
 
 }
