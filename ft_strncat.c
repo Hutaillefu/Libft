@@ -1,7 +1,5 @@
 #include "libft.h"
 
-#include <stdio.h>
-
 char	*ft_strncat(char *dst, const char *src, size_t n)
 {
 	size_t	i;
