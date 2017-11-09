@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: htaillef <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/08 17:06:22 by htaillef          #+#    #+#             */
-/*   Updated: 2017/11/08 17:17:54 by htaillef         ###   ########.fr       */
+/*   Created: 2017/11/09 12:42:37 by htaillef          #+#    #+#             */
+/*   Updated: 2017/11/09 12:44:03 by htaillef         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,8 @@ void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 	{
 		dst1[i] = src1[i];
 		if (dst1[i] == c)
-			return &dst1[i + 1];
+			return (&dst1[i + 1]);
 		i++;
 	}
 	return (NULL);
 }
-

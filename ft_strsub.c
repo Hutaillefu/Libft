@@ -1,43 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strstr.c                                        :+:      :+:    :+:   */
+/*   ft_strsub.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: htaillef <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/08 14:47:15 by htaillef          #+#    #+#             */
-/*   Updated: 2017/11/09 16:13:15 by htaillef         ###   ########.fr       */
+/*   Created: 2017/11/09 13:44:35 by htaillef          #+#    #+#             */
+/*   Updated: 2017/11/09 13:50:25 by htaillef         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strstr(const char *haystack, const char *needle)
+char	*ft_strsub(char const *s, unsigned int start, size_t len)
 {
-	int		i;
-	int		y;
-	int		needle_len;
-	char	*ptr;
+	char			*str;
+	unsigned int	i;
 
-	needle_len = ft_strlen(needle);
-	if (needle_len == 0)
-		return ((char *)haystack);
+	str = (char *)malloc(sizeof(char) * len + 1);
+	if (!str)
+		return (NULL);
 	i = 0;
-	while (haystack[i])
+	while (i < len)
 	{
-		y = 0;
-		if (haystack[i] == needle[y])
-		{
-			ptr = (char *)&haystack[i];
-			while (haystack[i] && needle[y] && haystack[i] == needle[y])
-			{
-				i++;
-				y++;
-			}
-			if (y == needle_len)
-				return (ptr);
-		}
+		str[i] = s[start + i];
 		i++;
 	}
-	return (NULL);
+	str[i] = '\0';
+	return (str);
 }

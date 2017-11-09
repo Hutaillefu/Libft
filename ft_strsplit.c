@@ -1,31 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_strsplit.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: htaillef <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/09 12:43:19 by htaillef          #+#    #+#             */
-/*   Updated: 2017/11/09 12:43:28 by htaillef         ###   ########.fr       */
+/*   Created: 2017/11/09 14:15:40 by htaillef          #+#    #+#             */
+/*   Updated: 2017/11/09 14:30:56 by htaillef         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_memcmp(const void *s1, const void *s2, size_t n)
+char	**ft_strsplit(char const *s, char c)
 {
-	size_t			i;
-	unsigned char	*s1n;
-	unsigned char	*s2n;
+	size_t		len;
+	size_t		i;
 
 	i = 0;
-	s1n = (unsigned char *)s1;
-	s2n = (unsigned char *)s2;
-	while (i < n)
+	len = ft_strlen(s);
+	while (i < len)
 	{
-		if (s1n[i] != s2n[i])
-			return (s1n[i] - s2n[i]);
-		i++;
+		while (s[i] && s[i] == c)
+			i++;
+		
 	}
-	return (0);
 }

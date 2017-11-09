@@ -6,7 +6,7 @@
 /*   By: htaillef <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/08 15:23:57 by htaillef          #+#    #+#             */
-/*   Updated: 2017/11/08 15:54:18 by htaillef         ###   ########.fr       */
+/*   Updated: 2017/11/09 15:57:15 by htaillef         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,6 @@ char	*ft_strchr(const char *s, int c)
 		i++;
 	}
 	if (c == '\0')
-		return (char *)&s[i];
+		return ((char *)&s[i]);
 	return (NULL);
 }

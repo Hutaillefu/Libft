@@ -1,31 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_striter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: htaillef <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/09 12:43:19 by htaillef          #+#    #+#             */
-/*   Updated: 2017/11/09 12:43:28 by htaillef         ###   ########.fr       */
+/*   Created: 2017/11/09 13:21:29 by htaillef          #+#    #+#             */
+/*   Updated: 2017/11/09 13:22:52 by htaillef         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-int	ft_memcmp(const void *s1, const void *s2, size_t n)
+void	ft_striter(char *s, void (*f)(char *))
 {
-	size_t			i;
-	unsigned char	*s1n;
-	unsigned char	*s2n;
+	int i;
 
 	i = 0;
-	s1n = (unsigned char *)s1;
-	s2n = (unsigned char *)s2;
-	while (i < n)
+	while (s[i])
 	{
-		if (s1n[i] != s2n[i])
-			return (s1n[i] - s2n[i]);
+		(*f)(&s[i]);
 		i++;
 	}
-	return (0);
 }

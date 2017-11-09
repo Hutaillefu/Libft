@@ -6,7 +6,7 @@
 /*   By: htaillef <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 17:27:31 by htaillef          #+#    #+#             */
-/*   Updated: 2017/11/07 17:33:44 by htaillef         ###   ########.fr       */
+/*   Updated: 2017/11/09 15:22:31 by htaillef         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,11 @@ void	ft_bzero(void *s, size_t n)
 	size_t	i;
 	char	*ret;
 
-	ret = s;
+	ret = (char *)s;
 	i = 0;
 	while (i < n)
 	{
-		ret = 0;
-		ret++;
+		ret[i] = '\0';
 		i++;
 	}
 }
