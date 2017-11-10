@@ -6,27 +6,36 @@
 /*   By: htaillef <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/09 13:58:54 by htaillef          #+#    #+#             */
-/*   Updated: 2017/11/09 14:12:39 by htaillef         ###   ########.fr       */
+/*   Updated: 2017/11/10 14:13:18 by htaillef         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strtrim(char const *s)
+static int	ft_isblank(unsigned char c)
 {
-	unsigned int	i;
-	size_t			y;
-	size_t			len;
+	return (c == ' ' || c == '\n' || c == '\t');
+}
+
+char		*ft_strtrim(char const *s)
+{
+	size_t	i;
+	size_t	y;
+	size_t	len;
+	size_t	z;
 
 	len = ft_strlen(s);
 	i = 0;
-	while (s[i] && (s[i] == ' ' || s[i] == '\n' || s[i] == '\t'))
+	while (s[i] && ft_isblank((unsigned char)s[i]))
 		i++;
-	y = 0;
-	while (s[len] && (s[i] == ' ' || s[i] == '\n' || s[i] == '\t'))
+	if (i == len)
+		return (char *)ft_memalloc(0);
+	y = len - 1;
+	z = 0;
+	while (s[y] && ft_isblank((unsigned char)s[y]))
 	{
-		y++;
-		len--;
+		y--;
+		z++;
 	}
-	return (ft_strsub(s, i, len - y));
+	return (ft_strsub(s, i, len - i - z));
 }

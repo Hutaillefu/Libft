@@ -6,13 +6,14 @@
 /*   By: htaillef <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 16:35:11 by htaillef          #+#    #+#             */
-/*   Updated: 2017/11/09 14:44:15 by htaillef         ###   ########.fr       */
+/*   Updated: 2017/11/10 12:48:09 by htaillef         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
+# include <unistd.h>
 # include <stdlib.h>
 # include <string.h>
 
@@ -60,4 +61,12 @@ char	*ft_strsub(char const *s, unsigned int start, size_t len);
 char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strtrim(char const *s);
 char	**ft_strsplit(char const *s, char c);
+void	ft_putchar_fd(char c, int fd);
+void	ft_putchar(char c);
+void	ft_putstr_fd(char const *s, int fd);
+void	ft_putstr(char const *s);
+void	ft_putendl_fd(char const *s, int fd);
+void	ft_putendl(char const *s);
+void	ft_putnbr_fd(int n, int fd);
+void	ft_putnbr(int n);
 #endif
