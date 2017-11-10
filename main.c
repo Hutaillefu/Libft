@@ -6,7 +6,7 @@
 /*   By: htaillef <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 18:03:15 by htaillef          #+#    #+#             */
-/*   Updated: 2017/11/08 18:17:11 by htaillef         ###   ########.fr       */
+/*   Updated: 2017/11/09 12:55:24 by htaillef         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -136,17 +136,17 @@ int		main(int argc, char **argv)
 	char t4a[7 + 1];
 	printf("     with Bonjour and dst[8] : %s\n", strncpy(t4a, "Bonjour", 0));
 	char t5[4 + 1];
-	printf("Test with 0123456789 and dest[5] : %s\n", ft_strncpy(t5, "0123456789", 5));
+	printf("Test with 0123456789 and dest[5] : %s\n", ft_strncpy(t5, "0123456789", 4));
 	char t5a[4 + 1];
-	printf("     with 0123456789 and dest[5] : %s\n", strncpy(t5a, "0123456789", 5));
+	printf("     with 0123456789 and dest[5] : %s\n", strncpy(t5a, "0123456789", 4));
 	char t6[0 + 1];
 	printf("Test with "" and dest[1] : %s\n", ft_strncpy(t6, "", sizeof(t6)));
 	char t6a[0 + 1];
 	printf("     with "" and dest[1] : %s\n", strncpy(t6a, "", sizeof(t6a)));
 	char t7[99 + 1];
-	printf("Test with coucou and dest[100] : %s\n", ft_strncpy(t7, "coucou", 5));
+	printf("Test with coucou and dest[100] : %s\n", ft_strncpy(t7, "coucou", 50));
 	char t7a[99 + 1];
-	printf("     with coucou and dest[100] : %s\n", strncpy(t7a, "coucou", 5));
+	printf("     with coucou and dest[100] : %s\n", strncpy(t7a, "coucou", 50));
 	printf("\n");
 
 	// STRCAT
@@ -226,10 +226,10 @@ int		main(int argc, char **argv)
 	printf("Test with Coucou, -, 7 : %s\n", (char *)ft_memset(t12, '-', 7));
 	char t12a[6 + 1] = "Coucou";
 	printf("     with Coucou, -, 7 : %s\n", (char *)memset(t12a, '-', 7));
-	char t13[0 + 1];
-	printf("Test with , ., 1 : %s\n", (char *)ft_memset(t13, '.', 1));
-	char t13a[0 + 1];
-	printf("     with , ., 1 : %s\n", (char *)memset(t13a, '.', 1));
+	char t13[0 + 1] = "";
+	printf("Test with , \\0, 1 : %s\n", (char *)ft_memset(t13, '\0', 1));
+	char t13a[0 + 1] = "";
+	printf("     with , \\0, 1 : %s\n", (char *)memset(t13a, '\0', 1));
 	printf("\n");
 
 	// MEMCPY
@@ -328,4 +328,13 @@ int		main(int argc, char **argv)
 	printf("     with Coucou, Coucou, 3 : %s\n", (char *)memmove(t31a, "Coucou", 3));
 	printf("\n");
 
+	// STRNCMP
+	printf("--- Test strncmp ---\n");
+	printf("Test with Coucou, Coucou, 6 : %i\n", ft_strncmp("Coucou", "Coucou", 6));
+	printf("     with Coucou, Coucou, 6 : %i\n", strncmp("Coucou", "Coucou", 6));
+	printf("Test with Salut, Salty, 2 : %i\n", ft_strncmp("Salut", "Salty", 2));
+	printf("     with Salut, Salty, 2 : %i\n", strncmp("Salut", "Salty", 2));
+	printf("Test with Salut, Salty, 4 : %i\n", ft_strncmp("Salut", "Salty", 4));
+	printf("     with Salut, Salty, 4 : %i\n", strncmp("Salut", "Salty", 4));
+	printf("\n");
 }

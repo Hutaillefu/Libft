@@ -6,7 +6,7 @@
 #    By: htaillef <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/09 14:46:26 by htaillef          #+#    #+#              #
-#    Updated: 2017/11/10 15:57:16 by htaillef         ###   ########.fr        #
+#    Updated: 2017/11/10 18:13:09 by htaillef         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -66,19 +66,27 @@ PART2 = ft_memalloc.c   \
 		ft_itoa.c       \
 		ft_strsplit.c
 
+PART3 = ft_lstnew.c    \
+		ft_lstdelone.c \
+		ft_lstdel.c    \
+		ft_lstadd.c    \
+		ft_lstiter.c   \
+		ft_lstmap.c
+
 FLAGS = -Wall -Wextra -Werror
 
 OBJ1 = $(PART1:.c=.o)
 OBJ2 = $(PART2:.c=.o)
+OBJ3 = $(PART3:.c=.o)
 
 $(NAME): all
 
 all: 
-	gcc $(FLAGS) -c $(PART1) $(PART2)
-	ar -rc $(NAME) $(OBJ1) $(OBJ2)
+	gcc $(FLAGS) -c $(PART1) $(PART2) $(PART3)
+	ar -rc $(NAME) $(OBJ1) $(OBJ2) $(OBJ3)
 
 clean:
-	rm -rf $(OBJ1) $(OBJ2)
+	rm -rf $(OBJ1) $(OBJ2) $(OBJ3)
 
 fclean: clean
 	rm -rf $(NAME)
