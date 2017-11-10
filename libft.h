@@ -6,7 +6,7 @@
 /*   By: htaillef <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 16:35:11 by htaillef          #+#    #+#             */
-/*   Updated: 2017/11/10 14:30:14 by htaillef         ###   ########.fr       */
+/*   Updated: 2017/11/10 15:56:51 by htaillef         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,4 +70,5 @@ void	ft_putendl(char const *s);
 void	ft_putnbr_fd(int n, int fd);
 void	ft_putnbr(int n);
 char	*ft_itoa(int n);
+char	**ft_strsplit(char const *s, char c);
 #endif

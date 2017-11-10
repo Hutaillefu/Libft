@@ -6,7 +6,7 @@
 #    By: htaillef <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/09 14:46:26 by htaillef          #+#    #+#              #
-#    Updated: 2017/11/10 14:30:24 by htaillef         ###   ########.fr        #
+#    Updated: 2017/11/10 15:57:16 by htaillef         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -63,7 +63,8 @@ PART2 = ft_memalloc.c   \
 		ft_putendl.c    \
 		ft_putnbr_fd.c  \
 		ft_putnbr.c     \
-		ft_itoa.c
+		ft_itoa.c       \
+		ft_strsplit.c
 
 FLAGS = -Wall -Wextra -Werror
 
