@@ -1,30 +1,30 @@
 /* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_lstadd.c                                        :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: htaillef <marvin@42.fr>                    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/10 17:45:34 by htaillef          #+#    #+#             */
-/*   Updated: 2017/11/10 18:03:53 by htaillef         ###   ########.fr       */
-/*                                                                            */
+/*                                                          LE - /            */
+/*                                                              /             */
+/*   ft_lstadd.c                                      .::    .:/ .      .::   */
+/*                                                 +:+:+   +:    +:  +:+:+    */
+/*   By: htaillef <marvin@le-101.fr>                +:+   +:    +:    +:+     */
+/*                                                 #+#   #+    #+    #+#      */
+/*   Created: 2018/10/16 17:52:58 by htaillef     #+#   ##    ##    #+#       */
+/*   Updated: 2018/10/16 17:53:02 by htaillef    ###    #+. /#+    ###.fr     */
+/*                                                         /                  */
+/*                                                        /                   */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 void	ft_lstadd(t_list **alst, t_list *new)
 {
-	t_list *head;
-
-	head = *alst;
-	if (!head)
+	if (!alst || !new)
+		return ;
+	if (!(*alst))
 	{
-		head = new;
-		head->next = NULL;
+		*alst = new;
+		(*alst)->next = NULL;
 	}
 	else
 	{
-		new->next = head;
-		head = new;
+		new->next = *alst;
+		*alst = new;
 	}
 }

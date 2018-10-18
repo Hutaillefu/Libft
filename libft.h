@@ -1,13 +1,14 @@
 /* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: htaillef <marvin@42.fr>                    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/07 16:35:11 by htaillef          #+#    #+#             */
-/*   Updated: 2017/11/10 18:10:18 by htaillef         ###   ########.fr       */
-/*                                                                            */
+/*                                                          LE - /            */
+/*                                                              /             */
+/*   libft.h                                          .::    .:/ .      .::   */
+/*                                                 +:+:+   +:    +:  +:+:+    */
+/*   By: htaillef <marvin@le-101.fr>                +:+   +:    +:    +:+     */
+/*                                                 #+#   #+    #+    #+#      */
+/*   Created: 2018/10/16 18:09:54 by htaillef     #+#   ##    ##    #+#       */
+/*   Updated: 2018/10/16 18:09:56 by htaillef    ###    #+. /#+    ###.fr     */
+/*                                                         /                  */
+/*                                                        /                   */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
@@ -24,7 +25,7 @@ int					ft_isascii(int c);
 int					ft_isalnum(int c);
 int					ft_isdigit(int c);
 int					ft_isalpha(int c);
-int					ft_atoi(const char *str);
+long				ft_atoi(const char *str);
 size_t				ft_strlen(const char *s);
 char				*ft_strcpy(char *dst, const char *src);
 void				ft_bzero(void *s, size_t n);
@@ -84,6 +85,17 @@ t_list				*ft_lstnew(void const *content, size_t content_size);
 void				ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
 void				ft_lstdel(t_list **alst, void (*del)(void *, size_t));
 void				ft_lstadd(t_list **alst, t_list *new);
+t_list				*ft_lstpop(t_list **lst);
+t_list				*ft_lstpoplast(t_list **lst);
+void				ft_lstpush(t_list **alst, t_list *new);
 void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
+
+# define BUFF_SIZE 32
+
+int					get_next_line(const int fd, char **line);
+
+t_list				*ft_lstgetindex(t_list **lst, int index);
+
+int					ft_lstlen(t_list **lst);
 #endif

@@ -1,20 +1,25 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   ft_memdel.c                                      .::    .:/ .      .::   */
+/*   ft_lstpop.c                                      .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: htaillef <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2018/10/16 17:57:38 by htaillef     #+#   ##    ##    #+#       */
-/*   Updated: 2018/10/16 17:57:43 by htaillef    ###    #+. /#+    ###.fr     */
+/*   Created: 2018/10/16 17:54:28 by htaillef     #+#   ##    ##    #+#       */
+/*   Updated: 2018/10/16 17:54:30 by htaillef    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_memdel(void **ap)
+t_list	*ft_lstpop(t_list **lst)
 {
-	free(*ap);
-	*ap = NULL;
+	t_list	*head;
+
+	if (!lst || !(*lst))
+		return (NULL);
+	head = *lst;
+	*lst = head->next;
+	return (head);
 }

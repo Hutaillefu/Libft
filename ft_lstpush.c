@@ -1,20 +1,35 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   ft_memdel.c                                      .::    .:/ .      .::   */
+/*   ft_lstpush.c                                     .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: htaillef <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2018/10/16 17:57:38 by htaillef     #+#   ##    ##    #+#       */
-/*   Updated: 2018/10/16 17:57:43 by htaillef    ###    #+. /#+    ###.fr     */
+/*   Created: 2018/10/16 17:54:45 by htaillef     #+#   ##    ##    #+#       */
+/*   Updated: 2018/10/16 17:54:48 by htaillef    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_memdel(void **ap)
+void	ft_lstpush(t_list **alst, t_list *new)
 {
-	free(*ap);
-	*ap = NULL;
+	t_list *iterator;
+
+	if (!alst || !new)
+		return ;
+	if (!(*alst))
+	{
+		*alst = new;
+		(*alst)->next = NULL;
+	}
+	else
+	{
+		iterator = *alst;
+		while (iterator->next)
+			iterator = iterator->next;
+		new->next = NULL;
+		iterator->next = new;
+	}
 }

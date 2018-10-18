@@ -1,20 +1,32 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   ft_memdel.c                                      .::    .:/ .      .::   */
+/*   ft_lstpoplast.c                                  .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: htaillef <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2018/10/16 17:57:38 by htaillef     #+#   ##    ##    #+#       */
-/*   Updated: 2018/10/16 17:57:43 by htaillef    ###    #+. /#+    ###.fr     */
+/*   Created: 2018/10/16 17:54:35 by htaillef     #+#   ##    ##    #+#       */
+/*   Updated: 2018/10/16 17:54:37 by htaillef    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_memdel(void **ap)
+t_list	*ft_lstpoplast(t_list **lst)
 {
-	free(*ap);
-	*ap = NULL;
+	t_list	*last;
+	t_list	*previous;
+
+	if (!lst || !(*lst))
+		return (NULL);
+	previous = NULL;
+	last = *lst;
+	while (last->next)
+	{
+		previous = last;
+		last = last->next;
+	}
+	previous->next = NULL;
+	return (last);
 }

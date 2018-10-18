@@ -1,13 +1,14 @@
 /* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_strsplit.c                                      :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: htaillef <marvin@42.fr>                    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/09 14:15:40 by htaillef          #+#    #+#             */
-/*   Updated: 2017/11/10 16:00:40 by htaillef         ###   ########.fr       */
-/*                                                                            */
+/*                                                          LE - /            */
+/*                                                              /             */
+/*   ft_strsplit.c                                    .::    .:/ .      .::   */
+/*                                                 +:+:+   +:    +:  +:+:+    */
+/*   By: htaillef <marvin@le-101.fr>                +:+   +:    +:    +:+     */
+/*                                                 #+#   #+    #+    #+#      */
+/*   Created: 2018/10/16 18:07:55 by htaillef     #+#   ##    ##    #+#       */
+/*   Updated: 2018/10/16 18:07:57 by htaillef    ###    #+. /#+    ###.fr     */
+/*                                                         /                  */
+/*                                                        /                   */
 /* ************************************************************************** */
 
 #include "libft.h"
@@ -61,12 +62,10 @@ char		**ft_strsplit(char const *s, char c)
 	char	**res;
 	int		nbwords;
 	int		index;
-	int		start;
 	int		i;
 
 	i = 0;
 	index = 0;
-	start = 0;
 	nbwords = get_nb_words(s, c);
 	res = (char **)ft_memalloc(sizeof(char *) * nbwords + 1);
 	if (!res)
